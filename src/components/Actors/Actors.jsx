@@ -1,29 +1,28 @@
-import React from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useTheme } from '@mui/material/styles';
+import { useParams, useHistory } from 'react-router-dom';
 import {
   Typography, Button, Grid, Box, CircularProgress,
 } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 import { useGetActorQuery, useGetMovieByActorIdQuery } from '../../services/TMDB';
 import useStyles from './styles';
-import { MovieList } from '../index';
+import { MovieList, Pagination } from '../index';
 
 function Actors() {
   const { id } = useParams();
   const history = useHistory();
   const { data, isFetching, error } = useGetActorQuery(id);
-  const page = 1;
+  const [page, setPage] = useState(1);
   const { data: movies } = useGetMovieByActorIdQuery({ id, page });
   const classes = useStyles();
-
-  console.log(movies);
-
-  console.log(data);
+  const theme = useTheme();
+  const currentTheme = theme.palette.mode;
 
   if (isFetching) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
-        <CircularProgress size="8rem" />
+        <CircularProgress color={(currentTheme === 'dark') ? 'secondary' : 'primary'} size="8rem" />
       </Box>
     );
   }
@@ -55,10 +54,10 @@ function Actors() {
             {data?.biography || 'No Info available'}
           </Typography>
           <Box marginTop="2rem" display="flex" justifyContent="space-around">
-            <Button variant="contained" color="primary" target="_blank" href={`https://www.imdb.com/name/${data?.imdb_id}`}>
+            <Button color={(currentTheme === 'dark') ? 'secondary' : 'primary'} variant="contained" target="_blank" href={`https://www.imdb.com/name/${data?.imdb_id}`}>
               IMDB
             </Button>
-            <Button startIcon={<ArrowBack />} onClick={() => history.goBack()} color="primary">
+            <Button color={(currentTheme === 'dark') ? 'secondary' : 'primary'} startIcon={<ArrowBack />} onClick={() => history.goBack()}>
               Back
             </Button>
           </Box>
@@ -67,6 +66,7 @@ function Actors() {
       <Box margin="2rem 0">
         <Typography variant="h2" gutterBottom align="center">Movies</Typography>
         {movies && <MovieList movies={movies} numberOfMovies={12} />}
+        <Pagination currentPage={page} setPage={setPage} totalPages={movies?.total_pages} />
       </Box>
     </>
   );

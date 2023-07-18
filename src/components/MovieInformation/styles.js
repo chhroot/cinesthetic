@@ -11,15 +11,22 @@ export default makeStyles((theme) => ({
       alignItems: 'center',
     },
   },
+  buttGroup: {
+    color: theme.palette.mode === 'dark' && '#E8372D !important',
+  },
+  butt: {
+    borderColor: theme.palette.mode === 'dark' && '#E8372D !important',
+  },
   poster: {
     borderRadius: '20px',
     boxShadow: '0.5em 1em 1em rgb(64,64,70)',
     width: '80%',
-    // [theme.breakpoints.down('md')]: {
-    //   margin: '0 auto',
-    //   width: '50%',
-    //   height: '350px',
-    // },
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      marginBottom: '30px',
+      margin: '0 auto',
+      width: '50%',
+    },
     [theme.breakpoints.down('sm')]: {
       margin: '0 auto',
       width: '100%',
