@@ -37,10 +37,11 @@ export default makeStyles((theme) => ({
     filter: theme.palette.mode === 'dark' && 'invert(1)',
     marginRight: '10px',
   },
-  links: {
+  link: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    textDecoration: 'none',
     [theme.breakpoints.down('sm')]: {
       padding: '0.5rem 1rem',
     },
@@ -52,5 +53,14 @@ export default makeStyles((theme) => ({
     height: '8em',
     objectFit: 'cover',
     borderRadius: '10px',
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+
   },
 }));
