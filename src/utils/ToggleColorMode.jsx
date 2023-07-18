@@ -16,7 +16,7 @@ function ToggleColorMode({ children }) {
         main: '#AC42BF',
       },
       secondary: {
-      main: '#E8372D',
+        main: '#E8372D',
       },
       mode,
     },

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
+  // eslint-disable-next-line no-unused-vars
   Modal, Typography, Button, ButtonGroup, Grid, Box, CircularProgress, useMediaQuery, Rating,
 } from '@mui/material';
 import {
@@ -35,6 +36,7 @@ function MovieInformation() {
     listName: 'watchlist/movies', accountId: user.id, sessionId: localStorage.getItem('session_id'), page: 1,
   });
   const { data, isFetching, error } = useGetMovieQuery(id);
+  // eslint-disable-next-line no-unused-vars
   const { data: recommendations, isFetching: isRecommendationsFetching } = useGetRecommendationsQuery({ list: '/recommendations', movie_id: id });
 
   const [isMovieFavorited, setIsMovieFavorited] = useState(false);
