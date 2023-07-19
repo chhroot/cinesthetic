@@ -22,7 +22,6 @@ function Profile() {
   }, []);
 
   const logout = () => {
-    console.log('sdffsd');
     localStorage.clear();
     window.location.href = '/';
   };
