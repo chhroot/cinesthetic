@@ -36,4 +36,3 @@ npm start
 ![image](https://github.com/chhroot/cinesthetic/assets/92013594/80ee591d-2f75-4592-9e62-d6b58408e9fe)
 ![image](https://github.com/chhroot/cinesthetic/assets/92013594/8766c51a-68c2-47ef-aafb-4ce7015c33b4)
 ![image](https://github.com/chhroot/cinesthetic/assets/92013594/00bfc50b-7463-4e94-b0e1-af3ad060df15)
-
