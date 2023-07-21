@@ -1,4 +1,4 @@
-# Cinesthetic
+# Cinesthetic 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6200c65f-7300-4690-8413-5e188305fa51/deploy-status)](https://cinesthetic.netlify.app/)
 
 Cinesthetic is a user-friendly movie information application designed to help movie enthusiasts explore details about their favorite movies. With an intuitive interface and powerful search capabilities, users can quickly find movie information and discover new films based on their preferred genres.  Get comprehensive information about various movies, including title, release date, overview, and ratings. Also discover the top casts of a movie, including actors and actresses with their respective roles. Filter movies based on different genres to find movies that match your interests. Additionally, Cinesthetic goes beyond the basics with features such as favoriting and watchlisting movies, as well as voice command functionality using Alan AI.
